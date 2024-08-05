@@ -20,6 +20,9 @@ var heroImage = new Image();
 heroImage.onload = function () {
     heroReady = true;
 };
+heroImage.onerror = function () {
+    console.error("Failed to load hero image");
+};
 heroImage.src = "images/monster.png";
 
 // Flowers
@@ -42,6 +45,9 @@ monsterImagePaths.forEach(function (path) {
             reset();
             main();
         }
+    };
+    img.onerror = function () {
+        console.error("Failed to load image: " + path);
     };
     img.src = path;
     monsterImages.push(img);
