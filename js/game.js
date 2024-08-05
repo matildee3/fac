@@ -1,4 +1,3 @@
-// Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 document.body.appendChild(canvas);
@@ -20,9 +19,6 @@ var heroImage = new Image();
 heroImage.onload = function () {
     heroReady = true;
 };
-heroImage.onerror = function () {
-    console.error("Failed to load hero image");
-};
 heroImage.src = "images/monster.png";
 
 // Flowers
@@ -30,7 +26,7 @@ var monsterImages = [];
 var monsterImageIndex = 0;
 
 var monsterImagePaths = [];
-for (var i = 1; i <= 14; i++) {
+for (var i = 1; i <= 9; i++) {
     monsterImagePaths.push("images/ff/f" + i + ".png");
 }
 
@@ -45,9 +41,6 @@ monsterImagePaths.forEach(function (path) {
             reset();
             main();
         }
-    };
-    img.onerror = function () {
-        console.error("Failed to load image: " + path);
     };
     img.src = path;
     monsterImages.push(img);
@@ -105,9 +98,9 @@ var update = function (modifier) {
 
     // Ensure hero stays within the canvas boundaries
     if (hero.x < 0) hero.x = 0;
-    if (hero.x > canvas.width - 64) hero.x = canvas.width - 64;
+    if (hero.x > canvas.width - 32) hero.x = canvas.width - 32;
     if (hero.y < 0) hero.y = 0;
-    if (hero.y > canvas.height - 64) hero.y = canvas.height - 64;
+    if (hero.y > canvas.height - 32) hero.y = canvas.height - 32;
 
     // Are they touching?
     if (
