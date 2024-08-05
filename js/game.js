@@ -27,7 +27,7 @@ var monsterImages = [];
 var monsterImageIndex = 0;
 
 var monsterImagePaths = [];
-for (var i = 1; i <= 9; i++) {
+for (var i = 1; i <= 14; i++) {
     monsterImagePaths.push("images/ff/f" + i + ".png");
 }
 
