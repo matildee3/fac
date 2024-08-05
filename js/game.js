@@ -1,3 +1,4 @@
+// Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 document.body.appendChild(canvas);
@@ -26,7 +27,7 @@ var monsterImages = [];
 var monsterImageIndex = 0;
 
 var monsterImagePaths = [];
-for (var i = 1; i <= 9; i++) {
+for (var i = 1; i <= 14; i++) {
     monsterImagePaths.push("images/ff/f" + i + ".png");
 }
 
@@ -98,9 +99,9 @@ var update = function (modifier) {
 
     // Ensure hero stays within the canvas boundaries
     if (hero.x < 0) hero.x = 0;
-    if (hero.x > canvas.width - 32) hero.x = canvas.width - 32;
+    if (hero.x > canvas.width - 64) hero.x = canvas.width - 64;
     if (hero.y < 0) hero.y = 0;
-    if (hero.y > canvas.height - 32) hero.y = canvas.height - 32;
+    if (hero.y > canvas.height - 64) hero.y = canvas.height - 64;
 
     // Are they touching?
     if (
